@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "legalnotices",
+  "info": {
+    "singularName": "legalnotice",
+    "pluralName": "legalnotices",
+    "displayName": "LegalNotice"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "blocks"
+    }
+  }
+}

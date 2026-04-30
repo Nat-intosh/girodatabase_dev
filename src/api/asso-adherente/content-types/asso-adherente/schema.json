@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "asso_adherentes",
+  "info": {
+    "singularName": "asso-adherente",
+    "pluralName": "asso-adherentes",
+    "displayName": "Asso_Adhérente"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Short_description": {
+      "type": "text"
+    }
+  }
+}
