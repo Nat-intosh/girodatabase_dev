@@ -48,3 +48,8 @@ services:
 
 volumes:
   postgres_data:
+
+networks:
+  giro_network:
+    name: giro_network
+    driver: bridge
