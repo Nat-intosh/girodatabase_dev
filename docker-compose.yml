@@ -24,6 +24,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    networks:
+      - giro_network
 
   postgres:
     image: postgres:15-alpine
@@ -41,6 +43,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - giro_network
 
 volumes:
   postgres_data:
