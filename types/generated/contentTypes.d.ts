@@ -752,6 +752,9 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::event-category.event-category'
     >;
+    is_recurring_event: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
@@ -760,6 +763,20 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String & Schema.Attribute.Required;
     place: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    recurring_day: Schema.Attribute.Enumeration<
+      [
+        'monday',
+        'tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+      ]
+    >;
+    recurring_end: Schema.Attribute.Date;
+    recurring_hour: Schema.Attribute.Time;
+    recurring_start: Schema.Attribute.Date;
     shortdescription: Schema.Attribute.Text & Schema.Attribute.Required;
     slug: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;

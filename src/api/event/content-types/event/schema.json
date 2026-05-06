@@ -22,9 +22,59 @@
       "type": "string",
       "required": true
     },
+    "is_recurring_event": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
     "date": {
       "type": "datetime",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "is_recurring_event"
+            },
+            true
+          ]
+        }
+      },
       "required": true
+    },
+    "recurring_day": {
+      "type": "enumeration",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "is_recurring_event"
+            },
+            false
+          ]
+        }
+      },
+      "enum": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ]
+    },
+    "recurring_hour": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "is_recurring_event"
+            },
+            false
+          ]
+        }
+      }
     },
     "place": {
       "type": "string",
@@ -48,6 +98,12 @@
     },
     "slug": {
       "type": "uid"
+    },
+    "recurring_start": {
+      "type": "date"
+    },
+    "recurring_end": {
+      "type": "date"
     }
   }
 }
