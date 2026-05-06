@@ -100,10 +100,30 @@
       "type": "uid"
     },
     "recurring_start": {
-      "type": "date"
+      "type": "date",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "is_recurring_event"
+            },
+            false
+          ]
+        }
+      }
     },
     "recurring_end": {
-      "type": "date"
+      "type": "date",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "is_recurring_event"
+            },
+            false
+          ]
+        }
+      }
     }
   }
 }
