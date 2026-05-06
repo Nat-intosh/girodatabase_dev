@@ -868,6 +868,8 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
       'api::global.global'
     > &
       Schema.Attribute.Private;
+    pride_banner: Schema.Attribute.Media<'images'>;
+    pride_date: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;

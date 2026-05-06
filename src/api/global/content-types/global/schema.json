@@ -37,6 +37,16 @@
     },
     "helloasso_link": {
       "type": "string"
+    },
+    "pride_date": {
+      "type": "datetime"
+    },
+    "pride_banner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
