@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collectifs",
+  "info": {
+    "singularName": "collectif",
+    "pluralName": "collectifs",
+    "displayName": "collectif"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Short_description": {
+      "type": "text"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

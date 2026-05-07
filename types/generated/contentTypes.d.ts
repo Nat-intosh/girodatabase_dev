@@ -672,6 +672,36 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCollectifCollectif extends Struct.CollectionTypeSchema {
+  collectionName: 'collectifs';
+  info: {
+    displayName: 'collectif';
+    pluralName: 'collectifs';
+    singularName: 'collectif';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::collectif.collectif'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    Short_description: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiConfidentialityConfidentiality
   extends Struct.SingleTypeSchema {
   collectionName: 'confidentialities';
@@ -1526,6 +1556,7 @@ declare module '@strapi/strapi' {
       'api::asso-adherente.asso-adherente': ApiAssoAdherenteAssoAdherente;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::collectif.collectif': ApiCollectifCollectif;
       'api::confidentiality.confidentiality': ApiConfidentialityConfidentiality;
       'api::event-category.event-category': ApiEventCategoryEventCategory;
       'api::event.event': ApiEventEvent;
