@@ -41,6 +41,19 @@
       },
       "required": true
     },
+    "end_date": {
+      "type": "datetime",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "is_recurring_event"
+            },
+            false
+          ]
+        }
+      }
+    },
     "recurring_day": {
       "type": "enumeration",
       "conditions": {
