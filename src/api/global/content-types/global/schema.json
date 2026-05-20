@@ -38,6 +38,9 @@
     "helloasso_link": {
       "type": "string"
     },
+    "pride_benevole_link": {
+      "type": "string"
+    },
     "pride_date": {
       "type": "datetime"
     },

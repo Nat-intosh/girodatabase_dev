@@ -14,14 +14,14 @@
     "question": {
       "type": "string"
     },
-    "answers": {
-      "type": "string"
-    },
     "faq_category": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::faq-category.faq-category",
       "inversedBy": "faqs"
+    },
+    "answer": {
+      "type": "richtext"
     }
   }
 }
