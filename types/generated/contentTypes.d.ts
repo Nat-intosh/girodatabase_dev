@@ -902,6 +902,8 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     pride_banner: Schema.Attribute.Media<'images'>;
     pride_benevole_link: Schema.Attribute.String;
     pride_date: Schema.Attribute.DateTime;
+    pride_description: Schema.Attribute.Text;
+    pride_map: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;

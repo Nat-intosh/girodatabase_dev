@@ -41,6 +41,9 @@
     "pride_benevole_link": {
       "type": "string"
     },
+    "pride_map": {
+      "type": "string"
+    },
     "pride_date": {
       "type": "datetime"
     },
@@ -50,6 +53,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "pride_description": {
+      "type": "text"
     }
   }
 }
