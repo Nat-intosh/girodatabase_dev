@@ -4,7 +4,7 @@
   "info": {
     "singularName": "event-category",
     "pluralName": "event-categories",
-    "displayName": "event_category"
+    "displayName": "Catégories de l'agenda"
   },
   "options": {
     "draftAndPublish": true

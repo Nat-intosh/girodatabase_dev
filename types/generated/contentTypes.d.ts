@@ -471,7 +471,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   collectionName: 'abouts';
   info: {
     description: 'Write about yourself and the content you create';
-    displayName: 'About';
+    displayName: '\u00C0 propos';
     pluralName: 'abouts';
     singularName: 'about';
   };
@@ -499,7 +499,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
 export interface ApiActionAction extends Struct.CollectionTypeSchema {
   collectionName: 'actions';
   info: {
-    displayName: 'Action';
+    displayName: 'Les actions ';
     pluralName: 'actions';
     singularName: 'action';
   };
@@ -541,7 +541,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
     description: 'Create your blog content';
-    displayName: 'Article';
+    displayName: '# Article de blog';
     pluralName: 'articles';
     singularName: 'article';
   };
@@ -551,7 +551,13 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   attributes: {
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
     blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
+      [
+        'shared.media',
+        'shared.quote',
+        'shared.rich-text',
+        'shared.slider',
+        'shared.embed',
+      ]
     >;
     category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
@@ -581,7 +587,7 @@ export interface ApiAssoAdherenteAssoAdherente
   extends Struct.CollectionTypeSchema {
   collectionName: 'asso_adherentes';
   info: {
-    displayName: 'Asso_Adh\u00E9rente';
+    displayName: 'Les assos';
     pluralName: 'asso-adherentes';
     singularName: 'asso-adherente';
   };
@@ -612,7 +618,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
     description: 'Create authors for your content';
-    displayName: 'Author';
+    displayName: 'Auteur-ices des articles';
     pluralName: 'authors';
     singularName: 'author';
   };
@@ -644,7 +650,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
     description: 'Organize your content into categories';
-    displayName: 'article_category';
+    displayName: 'Cat\u00E9gories des articles';
     pluralName: 'categories';
     singularName: 'category';
   };
@@ -675,7 +681,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
 export interface ApiCollectifCollectif extends Struct.CollectionTypeSchema {
   collectionName: 'collectifs';
   info: {
-    displayName: 'collectif';
+    displayName: 'Les collectifs';
     pluralName: 'collectifs';
     singularName: 'collectif';
   };
@@ -706,7 +712,7 @@ export interface ApiConfidentialityConfidentiality
   extends Struct.SingleTypeSchema {
   collectionName: 'confidentialities';
   info: {
-    displayName: 'Confidentiality';
+    displayName: 'Politique de confidentialit\u00E9';
     pluralName: 'confidentialities';
     singularName: 'confidentiality';
   };
@@ -735,7 +741,7 @@ export interface ApiEventCategoryEventCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'event_categories';
   info: {
-    displayName: 'event_category';
+    displayName: "Cat\u00E9gories de l'agenda";
     pluralName: 'event-categories';
     singularName: 'event-category';
   };
@@ -765,7 +771,7 @@ export interface ApiEventCategoryEventCategory
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
-    displayName: 'Event';
+    displayName: '# Agenda';
     pluralName: 'events';
     singularName: 'event';
   };
@@ -819,7 +825,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
 export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
   collectionName: 'faq_categories';
   info: {
-    displayName: 'faq_category';
+    displayName: 'Cat\u00E9gories de la faq';
     pluralName: 'faq-categories';
     singularName: 'faq-category';
   };
@@ -848,7 +854,7 @@ export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
-    displayName: 'Faq';
+    displayName: 'La Faq';
     pluralName: 'faqs';
     singularName: 'faq';
   };
@@ -879,7 +885,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
     description: 'Define global settings';
-    displayName: 'Global';
+    displayName: 'Infos globales & pride';
     pluralName: 'globals';
     singularName: 'global';
   };
@@ -916,7 +922,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiLegalnoticeLegalnotice extends Struct.SingleTypeSchema {
   collectionName: 'legalnotices';
   info: {
-    displayName: 'LegalNotice';
+    displayName: 'Mentions l\u00E9gales';
     pluralName: 'legalnotices';
     singularName: 'legalnotice';
   };
@@ -944,7 +950,7 @@ export interface ApiLegalnoticeLegalnotice extends Struct.SingleTypeSchema {
 export interface ApiPartenairePartenaire extends Struct.CollectionTypeSchema {
   collectionName: 'partenaires';
   info: {
-    displayName: 'Partenaire';
+    displayName: 'Les partenaires';
     pluralName: 'partenaires';
     singularName: 'partenaire';
   };
@@ -971,40 +977,10 @@ export interface ApiPartenairePartenaire extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiReportReport extends Struct.CollectionTypeSchema {
-  collectionName: 'reports';
-  info: {
-    displayName: 'Report';
-    pluralName: 'reports';
-    singularName: 'report';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    date: Schema.Attribute.Date;
-    file: Schema.Attribute.Media<'files' | 'images'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::report.report'
-    > &
-      Schema.Attribute.Private;
-    Name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
-    displayName: 'Service';
+    displayName: 'Les services';
     pluralName: 'services';
     singularName: 'service';
   };
@@ -1013,19 +989,13 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
-      [
-        'shared.slider',
-        'shared.rich-text',
-        'shared.quote',
-        'shared.media',
-        'shared.file',
-        'shared.seo',
-      ]
+      ['shared.slider', 'shared.rich-text', 'shared.quote', 'shared.media']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     icon: Schema.Attribute.Media<'images'>;
+    is_an_activity: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1569,7 +1539,6 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::legalnotice.legalnotice': ApiLegalnoticeLegalnotice;
       'api::partenaire.partenaire': ApiPartenairePartenaire;
-      'api::report.report': ApiReportReport;
       'api::service.service': ApiServiceService;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

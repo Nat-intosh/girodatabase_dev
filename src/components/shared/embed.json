@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_embeds",
+  "info": {
+    "displayName": "Embed",
+    "icon": "hashtag"
+  },
+  "options": {},
+  "attributes": {
+    "code": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

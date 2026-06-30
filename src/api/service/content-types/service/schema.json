@@ -4,7 +4,7 @@
   "info": {
     "singularName": "service",
     "pluralName": "services",
-    "displayName": "Service"
+    "displayName": "Les services"
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +16,9 @@
     },
     "short_description": {
       "type": "text"
+    },
+    "is_an_activity": {
+      "type": "boolean"
     },
     "icon": {
       "type": "media",
@@ -33,9 +36,7 @@
         "shared.slider",
         "shared.rich-text",
         "shared.quote",
-        "shared.media",
-        "shared.file",
-        "shared.seo"
+        "shared.media"
       ]
     }
   }

@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedEmbed extends Struct.ComponentSchema {
+  collectionName: 'components_shared_embeds';
+  info: {
+    displayName: 'Embed';
+    icon: 'hashtag';
+  };
+  attributes: {
+    code: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedFile extends Struct.ComponentSchema {
   collectionName: 'components_shared_files';
   info: {
@@ -78,6 +89,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.embed': SharedEmbed;
       'shared.file': SharedFile;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article",
+    "displayName": "# Article de blog",
     "description": "Create your blog content"
   },
   "options": {
@@ -51,7 +51,8 @@
         "shared.media",
         "shared.quote",
         "shared.rich-text",
-        "shared.slider"
+        "shared.slider",
+        "shared.embed"
       ]
     }
   }

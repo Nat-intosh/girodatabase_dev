@@ -4,7 +4,7 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "article_category",
+    "displayName": "Catégories des articles",
     "description": "Organize your content into categories"
   },
   "options": {

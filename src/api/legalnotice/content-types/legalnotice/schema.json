@@ -4,7 +4,7 @@
   "info": {
     "singularName": "legalnotice",
     "pluralName": "legalnotices",
-    "displayName": "LegalNotice"
+    "displayName": "Mentions légales"
   },
   "options": {
     "draftAndPublish": true

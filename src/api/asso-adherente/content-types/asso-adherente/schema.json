@@ -4,7 +4,7 @@
   "info": {
     "singularName": "asso-adherente",
     "pluralName": "asso-adherentes",
-    "displayName": "Asso_Adhérente"
+    "displayName": "Les assos"
   },
   "options": {
     "draftAndPublish": true
