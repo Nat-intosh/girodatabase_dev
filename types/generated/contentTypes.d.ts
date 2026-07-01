@@ -557,6 +557,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
         'shared.rich-text',
         'shared.slider',
         'shared.embed',
+        'shared.big-button',
       ]
     >;
     category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
@@ -568,6 +569,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 80;
       }>;
+    is_highlighted: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -980,7 +982,7 @@ export interface ApiPartenairePartenaire extends Struct.CollectionTypeSchema {
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
-    displayName: 'Les services';
+    displayName: 'Les services et activit\u00E9s';
     pluralName: 'services';
     singularName: 'service';
   };

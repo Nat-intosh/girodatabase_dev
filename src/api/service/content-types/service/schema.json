@@ -4,7 +4,7 @@
   "info": {
     "singularName": "service",
     "pluralName": "services",
-    "displayName": "Les services"
+    "displayName": "Les services et activités"
   },
   "options": {
     "draftAndPublish": true

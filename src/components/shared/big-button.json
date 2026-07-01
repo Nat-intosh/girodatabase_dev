@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_big_buttons",
+  "info": {
+    "displayName": "big-button"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

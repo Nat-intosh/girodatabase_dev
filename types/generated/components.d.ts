@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedBigButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_big_buttons';
+  info: {
+    displayName: 'big-button';
+  };
+  attributes: {
+    link: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+  };
+}
+
 export interface SharedEmbed extends Struct.ComponentSchema {
   collectionName: 'components_shared_embeds';
   info: {
@@ -89,6 +100,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.big-button': SharedBigButton;
       'shared.embed': SharedEmbed;
       'shared.file': SharedFile;
       'shared.media': SharedMedia;

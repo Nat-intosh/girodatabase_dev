@@ -45,6 +45,9 @@
       "target": "api::category.category",
       "inversedBy": "articles"
     },
+    "is_highlighted": {
+      "type": "boolean"
+    },
     "blocks": {
       "type": "dynamiczone",
       "components": [
@@ -52,7 +55,8 @@
         "shared.quote",
         "shared.rich-text",
         "shared.slider",
-        "shared.embed"
+        "shared.embed",
+        "shared.big-button"
       ]
     }
   }
