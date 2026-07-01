@@ -1025,6 +1025,14 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     icon: Schema.Attribute.Media<'images'>;
     is_an_activity: Schema.Attribute.Boolean;
+    link_calendar_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::event-category.event-category'
+    >;
+    link_faq_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::faq-category.faq-category'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

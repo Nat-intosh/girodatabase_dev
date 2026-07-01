@@ -30,6 +30,16 @@
     "slug": {
       "type": "uid"
     },
+    "link_faq_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::faq-category.faq-category"
+    },
+    "link_calendar_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event-category.event-category"
+    },
     "blocks": {
       "type": "dynamiczone",
       "components": [
