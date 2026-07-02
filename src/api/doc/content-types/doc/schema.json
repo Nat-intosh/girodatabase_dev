@@ -14,13 +14,11 @@
     "Name": {
       "type": "string"
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "Rapport",
-        "Information",
-        "Autre"
-      ]
+    "faq_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::faq-category.faq-category",
+      "inversedBy": "docs"
     },
     "File": {
       "type": "media",

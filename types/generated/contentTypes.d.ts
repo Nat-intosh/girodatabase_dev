@@ -739,6 +739,39 @@ export interface ApiConfidentialityConfidentiality
   };
 }
 
+export interface ApiContactReasonContactReason
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_reasons';
+  info: {
+    displayName: 'Raison de contacter';
+    pluralName: 'contact-reasons';
+    singularName: 'contact-reason';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-reason.contact-reason'
+    > &
+      Schema.Attribute.Private;
+    mail1: Schema.Attribute.String;
+    mail2: Schema.Attribute.String;
+    mail3: Schema.Attribute.String;
+    mail4: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    raison: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDocDoc extends Struct.CollectionTypeSchema {
   collectionName: 'docs';
   info: {
@@ -753,13 +786,16 @@ export interface ApiDocDoc extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    faq_category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::faq-category.faq-category'
+    >;
     File: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::doc.doc'> &
       Schema.Attribute.Private;
     Name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    type: Schema.Attribute.Enumeration<['Rapport', 'Information', 'Autre']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -865,6 +901,7 @@ export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    docs: Schema.Attribute.Relation<'oneToMany', 'api::doc.doc'>;
     faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1043,6 +1080,43 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     short_description: Schema.Attribute.Text;
     slug: Schema.Attribute.UID;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSupportUsSupportUs extends Struct.SingleTypeSchema {
+  collectionName: 'support_uses';
+  info: {
+    displayName: 'Nous soutenir';
+    pluralName: 'support-uses';
+    singularName: 'support-us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'shared.slider',
+        'shared.rich-text',
+        'shared.quote',
+        'shared.media',
+        'shared.embed',
+        'shared.big-button',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::support-us.support-us'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1569,6 +1643,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::collectif.collectif': ApiCollectifCollectif;
       'api::confidentiality.confidentiality': ApiConfidentialityConfidentiality;
+      'api::contact-reason.contact-reason': ApiContactReasonContactReason;
       'api::doc.doc': ApiDocDoc;
       'api::event-category.event-category': ApiEventCategoryEventCategory;
       'api::event.event': ApiEventEvent;
@@ -1578,6 +1653,7 @@ declare module '@strapi/strapi' {
       'api::legalnotice.legalnotice': ApiLegalnoticeLegalnotice;
       'api::partenaire.partenaire': ApiPartenairePartenaire;
       'api::service.service': ApiServiceService;
+      'api::support-us.support-us': ApiSupportUsSupportUs;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

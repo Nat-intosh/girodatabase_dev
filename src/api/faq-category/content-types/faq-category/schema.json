@@ -19,6 +19,12 @@
       "relation": "oneToMany",
       "target": "api::faq.faq",
       "mappedBy": "faq_category"
+    },
+    "docs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::doc.doc",
+      "mappedBy": "faq_category"
     }
   }
 }
