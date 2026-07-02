@@ -499,7 +499,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
 export interface ApiActionAction extends Struct.CollectionTypeSchema {
   collectionName: 'actions';
   info: {
-    displayName: 'Les actions ';
+    displayName: 'Les interventions';
     pluralName: 'actions';
     singularName: 'action';
   };
