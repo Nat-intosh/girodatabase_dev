@@ -11,8 +11,15 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Text": {
-      "type": "richtext"
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.rich-text",
+        "shared.quote",
+        "shared.media",
+        "shared.embed",
+        "shared.big-button"
+      ]
     }
   }
 }

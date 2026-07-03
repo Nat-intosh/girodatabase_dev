@@ -722,6 +722,15 @@ export interface ApiConfidentialityConfidentiality
     draftAndPublish: true;
   };
   attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'shared.rich-text',
+        'shared.quote',
+        'shared.media',
+        'shared.embed',
+        'shared.big-button',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -732,7 +741,6 @@ export interface ApiConfidentialityConfidentiality
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    Text: Schema.Attribute.RichText;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -996,6 +1004,15 @@ export interface ApiLegalnoticeLegalnotice extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'shared.quote',
+        'shared.rich-text',
+        'shared.media',
+        'shared.embed',
+        'shared.big-button',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1006,7 +1023,6 @@ export interface ApiLegalnoticeLegalnotice extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    text: Schema.Attribute.Blocks;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
