@@ -46,7 +46,9 @@
         "shared.slider",
         "shared.rich-text",
         "shared.quote",
-        "shared.media"
+        "shared.media",
+        "shared.big-button",
+        "shared.embed"
       ]
     }
   }

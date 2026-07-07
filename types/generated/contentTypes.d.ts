@@ -1071,7 +1071,14 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
-      ['shared.slider', 'shared.rich-text', 'shared.quote', 'shared.media']
+      [
+        'shared.slider',
+        'shared.rich-text',
+        'shared.quote',
+        'shared.media',
+        'shared.big-button',
+        'shared.embed',
+      ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
