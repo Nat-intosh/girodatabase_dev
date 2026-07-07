@@ -25,6 +25,9 @@
     },
     "mail4": {
       "type": "string"
+    },
+    "custom_message": {
+      "type": "string"
     }
   }
 }
