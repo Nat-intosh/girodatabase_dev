@@ -4,7 +4,7 @@
   "info": {
     "singularName": "faq",
     "pluralName": "faqs",
-    "displayName": "La Faq"
+    "displayName": "Question de la FAQ"
   },
   "options": {
     "draftAndPublish": true

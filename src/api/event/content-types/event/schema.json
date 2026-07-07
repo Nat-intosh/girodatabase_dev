@@ -4,7 +4,7 @@
   "info": {
     "singularName": "event",
     "pluralName": "events",
-    "displayName": "# Agenda"
+    "displayName": "# Evènement de l'agenda"
   },
   "options": {
     "draftAndPublish": true

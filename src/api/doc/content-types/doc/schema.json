@@ -4,7 +4,7 @@
   "info": {
     "singularName": "doc",
     "pluralName": "docs",
-    "displayName": "La faq - Documents"
+    "displayName": "Document de la FAQ"
   },
   "options": {
     "draftAndPublish": true

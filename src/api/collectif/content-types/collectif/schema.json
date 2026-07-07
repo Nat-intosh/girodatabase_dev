@@ -4,7 +4,7 @@
   "info": {
     "singularName": "collectif",
     "pluralName": "collectifs",
-    "displayName": "Les collectifs"
+    "displayName": "Les collectifs du Giro"
   },
   "options": {
     "draftAndPublish": true

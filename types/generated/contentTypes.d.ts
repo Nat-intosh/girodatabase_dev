@@ -589,7 +589,7 @@ export interface ApiAssoAdherenteAssoAdherente
   extends Struct.CollectionTypeSchema {
   collectionName: 'asso_adherentes';
   info: {
-    displayName: 'Les assos';
+    displayName: 'Les assos adh\u00E9rentes';
     pluralName: 'asso-adherentes';
     singularName: 'asso-adherente';
   };
@@ -652,7 +652,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
     description: 'Organize your content into categories';
-    displayName: 'Cat\u00E9gories des articles';
+    displayName: 'Cat\u00E9gorie des articles';
     pluralName: 'categories';
     singularName: 'category';
   };
@@ -683,7 +683,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
 export interface ApiCollectifCollectif extends Struct.CollectionTypeSchema {
   collectionName: 'collectifs';
   info: {
-    displayName: 'Les collectifs';
+    displayName: 'Les collectifs du Giro';
     pluralName: 'collectifs';
     singularName: 'collectif';
   };
@@ -783,7 +783,7 @@ export interface ApiContactReasonContactReason
 export interface ApiDocDoc extends Struct.CollectionTypeSchema {
   collectionName: 'docs';
   info: {
-    displayName: 'La faq - Documents';
+    displayName: 'Document de la FAQ';
     pluralName: 'docs';
     singularName: 'doc';
   };
@@ -814,7 +814,7 @@ export interface ApiEventCategoryEventCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'event_categories';
   info: {
-    displayName: "Cat\u00E9gories de l'agenda";
+    displayName: "Cat\u00E9gorie de l'agenda";
     pluralName: 'event-categories';
     singularName: 'event-category';
   };
@@ -844,7 +844,7 @@ export interface ApiEventCategoryEventCategory
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
-    displayName: '# Agenda';
+    displayName: "# Ev\u00E8nement de l'agenda";
     pluralName: 'events';
     singularName: 'event';
   };
@@ -898,7 +898,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
 export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
   collectionName: 'faq_categories';
   info: {
-    displayName: 'Cat\u00E9gories de la faq';
+    displayName: 'Cat\u00E9gorie de la faq';
     pluralName: 'faq-categories';
     singularName: 'faq-category';
   };
@@ -928,7 +928,7 @@ export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
-    displayName: 'La Faq';
+    displayName: 'Question de la FAQ';
     pluralName: 'faqs';
     singularName: 'faq';
   };
